@@ -4,7 +4,6 @@ const mysql = require('mysql2')
 const app = express()
 app.use(express.json())
 
-
 //mysql Connection
 const connection = mysql.createConnection({
     port: '3306',
@@ -79,7 +78,6 @@ app.get("/read/email/:email" ,async(req,res)=>{
 app.patch("/update/:email",async(req,res)=>{
     const email = req.params.email
     const newPassword = req.body.newPassword
-
     try{
         connection.query(
         "UPDATE users SET password = ? WHERE email = ?",[newPassword,email] ,(err,results,fields)=>{
@@ -96,8 +94,7 @@ app.patch("/update/:email",async(req,res)=>{
 })
 
 app.delete("/delete/:email",async(req,res)=>{
-    const email = req.params.email
-    
+    const email = req.params.email   
     try{
         connection.query(
         "DELETE FROM users WHERE email = ?",[email] ,(err,results,fields)=>{
