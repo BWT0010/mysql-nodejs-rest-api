@@ -1,1 +1,3 @@
-# mysql-nodejs-rest-api follow by Patiphan Phengpao
+# mysql-nodejs-rest-api <br> follow  Patiphan Phengpao
+
+npm i express mysql2 nodemon
